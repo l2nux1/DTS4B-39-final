@@ -1,4 +1,3 @@
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -6,7 +5,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import * as React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -14,6 +13,8 @@ import { auth } from '../config/firebase';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { Alert } from '@mui/material';
+import { Stack } from '@mui/system';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -35,7 +36,6 @@ const Login = () => {
     });
 
     const onSubmit = async (event) => {
-        event.preventDefault();
         const data = new FormData(event.currentTarget);
         const email = data.get('email');
         const password = data.get('password');
@@ -45,18 +45,9 @@ const Login = () => {
             navigate("/");
         } catch (error) {
             setErrorMessage(error.message);
+            console.log(error.message);
         }
     };
-
-    const forgotPassword = () => {
-        sendPasswordResetEmail(auth, "")
-            .then(() => {
-                console.log("email sent");
-            })
-            .catch((error) => {
-                setErrorMessage(error.message);
-            });
-    }
 
     const loginWithGoogle = () => {
         const provider = new GoogleAuthProvider();
@@ -80,14 +71,31 @@ const Login = () => {
                     alignItems: 'center',
                 }}
             >
-                <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                    <LockOutlinedIcon />
+                <Avatar sx={{
+                    m: 1,
+                    bgcolor: 'black',
+                    height: 100,
+                    width: 100,
+                    mb: 4
+                }}>
+                    <Box
+                        component="img"
+                        sx={{
+                            height: 60,
+                            width: 60,
+                        }}
+                        alt="Logo"
+                        src="logo-movie.jpg"
+                    />
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Sign In
                 </Typography>
+                <Stack sx={{ width: '100%', mt: 2 }} spacing={2}>
+                    {errorMessage ? <Alert severity='error'>{errorMessage}</Alert> : <></>}
+                </Stack>
                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
-                    <Grid container spacing={2}>
+                    <Grid container spacing={1}>
                         <Grid item xs={12}>
                             <TextField
                                 margin="normal"
