@@ -1,0 +1,376 @@
+[
+    {
+        "adult": false,
+        "backdrop_path": "/yYrvN5WFeGYjJnRzhY0QXuo4Isw.jpg",
+        "genre_ids": [
+            28,
+            12,
+            878
+        ],
+        "id": 505642,
+        "original_language": "en",
+        "original_title": "Black Panther: Wakanda Forever",
+        "overview": "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
+        "popularity": 393.815,
+        "poster_path": "/ps2oKfhY6DL3alynlSqY97gHSsg.jpg",
+        "release_date": "2022-11-11",
+        "title": "Black Panther: Wakanda Forever",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/9IDJpHROaC0S1ZlIxrvzOcOX5yC.jpg",
+        "genre_ids": [
+            16,
+            35,
+            10751,
+            80
+        ],
+        "id": 629542,
+        "original_language": "en",
+        "original_title": "The Bad Guys",
+        "overview": "When the infamous Bad Guys are finally caught after years of countless heists and being the world’s most-wanted villains, Mr. Wolf brokers a deal to save them all from prison.",
+        "popularity": 323.68,
+        "poster_path": "/7qop80YfuO0BwJa1uXk1DXUUEwv.jpg",
+        "release_date": "2022-04-22",
+        "title": "The Bad Guys",
+        "video": false,
+        "vote_average": 7.7,
+        "vote_count": 1086
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/54PmeEzQMvpojpJBku61ZGQnWUX.jpg",
+        "genre_ids": [
+            16,
+            12,
+            28,
+            14
+        ],
+        "id": 900667,
+        "original_language": "ja",
+        "original_title": "ONE PIECE FILM RED",
+        "overview": "Uta — the most beloved singer in the world. Her voice, which she sings with while concealing her true identity, has been described as “otherworldly.” She will appear in public for the first time at a live concert. As the venue fills with all kinds of Uta fans — excited pirates, the Navy watching closely, and the Straw Hats led by Luffy who simply came to enjoy her sonorous performance — the voice that the whole world has been waiting for is about to resound.",
+        "popularity": 297.005,
+        "poster_path": "/m80kPdrmmtEh9wlLroCp0bwUGH0.jpg",
+        "release_date": "2022-11-04",
+        "title": "One Piece Film Red",
+        "video": false,
+        "vote_average": 7.2,
+        "vote_count": 109
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/7IwLNl9MJbj47pObu8xMDUbIesv.jpg",
+        "genre_ids": [
+            27,
+            53
+        ],
+        "id": 676547,
+        "original_language": "en",
+        "original_title": "Prey for the Devil",
+        "overview": "In response to a global rise in demonic possessions, the Catholic Church reopens exorcism schools to train priests in the Rite of Exorcism. On this spiritual battlefield, an unlikely warrior rises: a young nun, Sister Ann. Thrust onto the spiritual frontline with fellow student Father Dante, Sister Ann finds herself in a battle for the soul of a young girl and soon realizes the Devil has her right where he wants her.",
+        "popularity": 104.887,
+        "poster_path": "/jXwYESgxqkXlYvoTyUTO2hqKK7T.jpg",
+        "release_date": "2022-10-28",
+        "title": "Prey for the Devil",
+        "video": false,
+        "vote_average": 10,
+        "vote_count": 3
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/5nVcIhxBf888KxvySUC9c2cdiKw.jpg",
+        "genre_ids": [
+            27
+        ],
+        "id": 729454,
+        "original_language": "en",
+        "original_title": "Don’t Fuck In The Woods 2",
+        "overview": "The counselors of Pine Hills Summer Camp are getting the grounds ready for the season. While they set up, a mysterious girl enters the camp after a night of bloodshed. And there are things following her as well.",
+        "popularity": 36.3,
+        "poster_path": "/AwE3QOHb5mCY5G2yvJDytRo75NK.jpg",
+        "release_date": "2022-10-24",
+        "title": "Don’t Fuck In The Woods 2",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/fwhN9a0oRZvzc2tDuu5BZ59MOPz.jpg",
+        "genre_ids": [
+            18,
+            10402
+        ],
+        "id": 817758,
+        "original_language": "en",
+        "original_title": "TÁR",
+        "overview": "Renowned musician Lydia Tár is days away from recording the symphony that will elevate her career. When all elements seem to conspire against her, Lydia's adopted daughter Petra becomes an integral emotional support for her struggling mother.",
+        "popularity": 26.789,
+        "poster_path": "/dRVAlaU0vbG6hMf2K45NSiIyoUe.jpg",
+        "release_date": "2022-10-07",
+        "title": "TÁR",
+        "video": false,
+        "vote_average": 6.4,
+        "vote_count": 10
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/o1k6zNKYVQuNx5DIyVpT9j6gwaQ.jpg",
+        "genre_ids": [
+            27,
+            35
+        ],
+        "id": 593643,
+        "original_language": "en",
+        "original_title": "The Menu",
+        "overview": "A couple travels to a coastal island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some shocking surprises.",
+        "popularity": 22.793,
+        "poster_path": "/3R3dopFTwneJVPW3ubcrnoPfI05.jpg",
+        "release_date": "2022-11-18",
+        "title": "The Menu",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+            18
+        ],
+        "id": 1024764,
+        "original_language": "en",
+        "original_title": "First Responders",
+        "overview": "First Responders is an inspirational movie that celebrates the vitality of marriage and the bonds of friendship that carry our film’s firefighters, police, and EMTs through their challenges.  It tells the story of Karen Williams, a trauma therapist who has witnessed firsthand the special courage that shapes those who work in emergency services. But when her husband, a career firefighter, returns from a life-changing blaze, and she discovers that a degree and years of counseling first responders has done little to personally prepare her to help her husband’s battle with PTSD.  Unable to see a path to save her marriage, she turns to God and celebrates the truth that through Him all things are possible. Perhaps no one knows this better than the brave men and women who provide emergency services: the ones we call “first responders.”",
+        "popularity": 29.399,
+        "poster_path": "/nR9cH48WYuuZ1cXQW5ZLdzmbecg.jpg",
+        "release_date": "2022-10-24",
+        "title": "First Responders",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/70Ed3BrtHU1egtKArndVSFvU6Qx.jpg",
+        "genre_ids": [
+            18,
+            36
+        ],
+        "id": 579496,
+        "original_language": "en",
+        "original_title": "Call Jane",
+        "overview": "A married woman with an unwanted pregnancy lives in a time in America where she can't get a legal abortion and works with a group of suburban women to find help.",
+        "popularity": 25.499,
+        "poster_path": "/cvszf2XFx30LxzUhEDkecCp1DPh.jpg",
+        "release_date": "2022-10-28",
+        "title": "Call Jane",
+        "video": false,
+        "vote_average": 6,
+        "vote_count": 1
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/p45arnr0n7xm5O3H0cs4rMfHl3s.jpg",
+        "genre_ids": [
+            99
+        ],
+        "id": 1008773,
+        "original_language": "en",
+        "original_title": "Doctor Who Am I",
+        "overview": "In 1996, a Doctor Who TV movie was envisioned to lead the franchise into an exciting new future with a fresh direction but was met only by an outcry from disapproving fans. Now, follow the film’s screenwriter, Matthew Jacobs, as he is pulled back into the world of the Doctor Who fandom, where he unexpectedly finds himself a kindred part of this close-knit, yet vast, family of fans.",
+        "popularity": 23.12,
+        "poster_path": "/ocCGXs1XuYgpk4jvv9dGdaKni5P.jpg",
+        "release_date": "2022-10-28",
+        "title": "Doctor Who Am I",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+            28
+        ],
+        "id": 1024627,
+        "original_language": "en",
+        "original_title": "The System",
+        "overview": "When a young soldier, newly returned from war, gets caught up in a drug bust, he is recruited by the authorities to go undercover in a notoriously dangerous prison in order to figure out what is really going on.",
+        "popularity": 18.95,
+        "poster_path": "/tdLbszTbuB7DTjdTa2M3aNcTwy6.jpg",
+        "release_date": "2022-10-28",
+        "title": "The System",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+            18,
+            10402
+        ],
+        "id": 696372,
+        "original_language": "en",
+        "original_title": "A Chance Encounter",
+        "overview": "In the Sicilian town of Taormina, Italy, an aspiring writer in search of inspiration meets a folk singer trying to write a follow up to her breakout hit. Their chemistry sparks collaboration, challenging each other to express their thorniest secrets.",
+        "popularity": 20.839,
+        "poster_path": "/9KfxFc6zm3hUB0lt7yJf5iJPh8C.jpg",
+        "release_date": "2022-10-28",
+        "title": "A Chance Encounter",
+        "video": false,
+        "vote_average": 3,
+        "vote_count": 1
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/ghIF9txDO8mXGQIhuzSLSzlnSvh.jpg",
+        "genre_ids": [
+            18,
+            35
+        ],
+        "id": 685691,
+        "original_language": "es",
+        "original_title": "BARDO, Falsa crónica de unas cuantas verdades",
+        "overview": "Silverio, a renowned Mexican journalist and documentary filmmaker living in Los Angeles, who, after being named the recipient of a prestigious international award, is compelled to return to his native country, unaware that this simple trip will push him to an existential limit.",
+        "popularity": 19.704,
+        "poster_path": "/3e6RA0CzFDC0pz5TqiRlbHcsc2n.jpg",
+        "release_date": "2022-11-04",
+        "title": "BARDO, False Chronicle of a Handful of Truths",
+        "video": false,
+        "vote_average": 10,
+        "vote_count": 1
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/rvFeNpYimvtEEZgkhiBfXJA5oTf.jpg",
+        "genre_ids": [
+            27
+        ],
+        "id": 1026563,
+        "original_language": "es",
+        "original_title": "13 exorcismos",
+        "overview": "",
+        "popularity": 16.652,
+        "poster_path": "/2yzpiUeOQHnbiOayAAwG0FcXRmc.jpg",
+        "release_date": "2022-11-04",
+        "title": "13 Exorcisms",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/giveZjQGE4Pn3kJvsTn7uHqLjZS.jpg",
+        "genre_ids": [
+            18
+        ],
+        "id": 615952,
+        "original_language": "en",
+        "original_title": "Armageddon Time",
+        "overview": "A deeply personal story about the strength of family, the complexity of friendship, and the generational pursuit of the American Dream.",
+        "popularity": 19.475,
+        "poster_path": "/1ResCMsWd0w4o8SJEJIZrQxbRof.jpg",
+        "release_date": "2022-10-28",
+        "title": "Armageddon Time",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/2l8Mcy6MD8MoqYmQIuGcKz63Sra.jpg",
+        "genre_ids": [
+            18
+        ],
+        "id": 660943,
+        "original_language": "es",
+        "original_title": "El olvido que seremos",
+        "overview": "From Academy Award-winning filmmaker Fernando Trueba (Belle Époque) and based on the eponymous book Oblivion: A Memoir, the film is about prominent doctor and human rights activist Héctor Abad Gómez (Javier Cámara). Taking place in the polarized and violent Medellín (Colombia’s “City of Eternal Spring”) of the 1970s, the story tells of the life of the doctor, a father who is concerned about both his children and children from less favored classes. After a devastating loss in the family, Héctor gives himself to the greater cause of public health programs for the poor in Medellín to the consternation of the city’s authorities. This is an intimate story that we see from the eyes of a father’s only son, Héctor Abad Faciolince, one of the most outstanding writers in contemporary Colombia.",
+        "popularity": 15.177,
+        "poster_path": "/jWAwnYv5osJuth6G0lwPoQD06gs.jpg",
+        "release_date": "2022-11-18",
+        "title": "Memories of My Father",
+        "video": false,
+        "vote_average": 7.7,
+        "vote_count": 117
+    },
+    {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+            18
+        ],
+        "id": 646473,
+        "original_language": "en",
+        "original_title": "Dear Zoe",
+        "overview": "Coming-of-age dramedy in which teenage Tess enlists her biological father - a lovable slacker from the wrong side of the tracks - and the charming juvenile delinquent next door to help her come to grips with the death of her little sister.",
+        "popularity": 9.055,
+        "poster_path": "/yoNJenyEUROtDFzYltED0C9EIfl.jpg",
+        "release_date": "2022-11-04",
+        "title": "Dear Zoe",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+            27
+        ],
+        "id": 1034045,
+        "original_language": "en",
+        "original_title": "Hayride to Hell",
+        "overview": "A small town farmer exacts his bloody revenge on unscrupulous town folk who try to steal his land.",
+        "popularity": 17.307,
+        "poster_path": "/tXhZYtN06amWgBFGGyRK438kIPc.jpg",
+        "release_date": "2022-10-26",
+        "title": "Hayride to Hell",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/hSO9533O8q4wbuvcvzuqeoCfbXb.jpg",
+        "genre_ids": [
+            18
+        ],
+        "id": 854239,
+        "original_language": "en",
+        "original_title": "Till",
+        "overview": "The true story of Mamie Till Mobley’s relentless pursuit of justice for her 14 year old son, Emmett Till, who, in 1955, was lynched while visiting his cousins in Mississippi.",
+        "popularity": 13.779,
+        "poster_path": "/dLCFNE88yhbHelLvj2vpgbW3ZUI.jpg",
+        "release_date": "2022-10-14",
+        "title": "Till",
+        "video": false,
+        "vote_average": 8,
+        "vote_count": 1
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/9azDhJzFeCQLDAuV6QbNGkrSH7p.jpg",
+        "genre_ids": [
+            35
+        ],
+        "id": 632856,
+        "original_language": "en",
+        "original_title": "Spirited",
+        "overview": "Each Christmas Eve, the Ghost of Christmas Present selects one dark soul to be reformed by a visit from three spirits. But this season, he picked the wrong Scrooge. Clint Briggs turns the tables on his ghostly host until Present finds himself reexamining his own past, present and future.",
+        "popularity": 10.917,
+        "poster_path": "/uikxwFyBKQt0LN2AvJJzclyYOob.jpg",
+        "release_date": "2022-11-11",
+        "title": "Spirited",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+    }
+]

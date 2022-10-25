@@ -1,16 +1,19 @@
-import { Box } from '@mui/material';
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import Navbar from '../components/Navbar';
+import UpcomingList from './UpcomingList';
+import ListRow from './ListRow';
 
-import { auth } from '../config/firebase';
+import { GetStaticData } from '../data/StaticData';
 
 const Home = () => {
-    const [user] = useAuthState(auth);
     return (
-        <Box sx={{ margin: 10 }}>
-            This is for Home <br />
-            Current user: {user.displayName ?? user.email}
-        </Box>
+        <>
+            <Navbar />
+            <UpcomingList items={GetStaticData('upcoming')} />
+            <ListRow title={"Now Playing"} items={GetStaticData('nowPlaying')} />
+            <ListRow title={"Trending"} items={GetStaticData('trending')} />
+            <ListRow title={"Popular"} items={GetStaticData('popular')} />
+        </>
     )
 }
 export default Home

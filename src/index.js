@@ -9,6 +9,7 @@ import Register from './containers/Register';
 import ForgetPass from './containers/ForgetPass';
 import reportWebVitals from './reportWebVitals';
 import ProtectedRoute from './components/ProtectedRoute';
+import ListTile from './containers/ListTile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,10 @@ root.render(
       <Route path="/" element={
         <ProtectedRoute loginOnly={false}>
           <App />
+        </ProtectedRoute>} />
+      <Route path="list-tile" element={
+        <ProtectedRoute loginOnly={false}>
+          <ListTile />
         </ProtectedRoute>} />
       <Route path="login" element={
         <ProtectedRoute loginOnly={false}>
@@ -30,7 +35,7 @@ root.render(
         <ProtectedRoute loginOnly={false}>
           <ForgetPass />
         </ProtectedRoute>} />
-      <Route path="*" element={<NotFound />} />      
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
 );

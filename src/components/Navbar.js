@@ -1,12 +1,19 @@
-import { EmojiEmotions, Logout } from '@mui/icons-material';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import { EmojiEmotions, Logout, Menu } from '@mui/icons-material';
+import {
+    IconButton,
+    Typography,
+    Toolbar,
+    Box,
+    AppBar,
+    Button
+} from '@mui/material';
+
 import * as React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import SearchBox from './SearchBox';
+import Account from './Account';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -20,28 +27,35 @@ const Navbar = () => {
         }
     };
 
-
     return (
         <Box>
             <AppBar position="static">
                 <Toolbar>
-                    <EmojiEmotions/>
-                    {/*<Typography
-                        variant="h6"
-                        sx={{
-                            flexGrow: 1,
-                            textAlign: 'left'
-                        }}
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="open drawer"
+                        sx={{ mr: 2 }}
                     >
-                        <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/">
-                            Home
-                        </Link>
-                    </Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <Box sx={{ padding: 1 }}>
-                            <Logout onClick={onLogout} />
-                        </Box>
-                    </Box>*/}
+                        <Menu />
+                    </IconButton>
+
+                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                        <Button sx={{ color: '#fff' }}>
+                            Movies
+                        </Button>
+                        <Button sx={{ color: '#fff' }}>
+                            TV Shows
+                        </Button>
+
+                    </Box>
+
+                    <SearchBox text={"Search.."} />
+                    <Box sx={{ flexGrow: 1 }} />
+                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <Account />
+                    </Box>
                 </Toolbar>
             </AppBar>
         </Box >
