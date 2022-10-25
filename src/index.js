@@ -15,7 +15,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={
-        <ProtectedRoute>
+        <ProtectedRoute loginOnly={false}>
           <App />
         </ProtectedRoute>} />
       <Route path="login" element={
@@ -30,7 +30,7 @@ root.render(
         <ProtectedRoute loginOnly={false}>
           <ForgetPass />
         </ProtectedRoute>} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={<NotFound />} />      
     </Routes>
   </BrowserRouter>
 );

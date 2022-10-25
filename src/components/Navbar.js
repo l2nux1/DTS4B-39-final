@@ -22,11 +22,11 @@ const Navbar = () => {
 
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <AppBar>
+        <Box>
+            <AppBar position="static">
                 <Toolbar>
-                    <EmojiEmotions sx={{ display: 'flex', mr: 2 }} />
-                    <Typography
+                    <EmojiEmotions/>
+                    {/*<Typography
                         variant="h6"
                         sx={{
                             flexGrow: 1,
@@ -41,7 +41,7 @@ const Navbar = () => {
                         <Box sx={{ padding: 1 }}>
                             <Logout onClick={onLogout} />
                         </Box>
-                    </Box>
+                    </Box>*/}
                 </Toolbar>
             </AppBar>
         </Box >
