@@ -1,24 +1,28 @@
 import { ImageList } from '@mui/material';
 import PosterItem from '../components/PosterItem';
+import { ThemeProvider } from '@mui/material';
+import CssBaseline from "@mui/material/CssBaseline";
 
-import { GetStaticData } from '../data/StaticData';
+import theme from '../themes/theme';
+import useMovieStore, { selectMovies } from '../store/movie';
+
+import {Box} from '@mui/material';
 
 const ListTile = () => {
+   
+    const movies = useMovieStore(selectMovies);
 
-    const queryParams = new URLSearchParams(window.location.search)
-    //const type = queryParams.get('type')
-    const data = queryParams.get('data')
-    const itemData = GetStaticData(data)
-    const windowWidth = Math.ceil(window.innerWidth / 320)
-    console.log(windowWidth)
     return (
-        <>
-            <ImageList cols={5}>
-                {itemData.map((item, index) => (
-                    <PosterItem key={index} item={item} />
-                ))}
-            </ImageList>
-        </>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Box sx={{ mt: 10 }}>            
+                <ImageList cols={5}>
+                    {movies.map((item, index) => (
+                        <PosterItem key={index} item={item} />
+                    ))}
+                </ImageList>
+            </Box>
+        </ThemeProvider>
     )
 }
 

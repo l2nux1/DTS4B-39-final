@@ -4,10 +4,10 @@ const popularData = require('./popularData.json')
 const nowPlayingData = require('./nowPlayingData.json')
 
 const staticList = [
-    { type: 'upcoming', data: upcomingData },
-    { type: 'trending', data: trendingData },
-    { type: 'popular', data: popularData },
-    { type: 'nowPlaying', data: nowPlayingData },
+    { type: 'Upcoming', data: upcomingData },
+    { type: 'Trending', data: trendingData },
+    { type: 'Popular', data: popularData },
+    { type: 'Now Playing', data: nowPlayingData },
 ]
 
 exports.GetStaticData = (typeList) => {

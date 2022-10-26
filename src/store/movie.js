@@ -23,9 +23,9 @@ const useMovieStore = create(
                     console.log(error);
                 }
             },
-            fetchPopularMovies: async (page, region) => {
+            fetchPopularMovies: async () => {
                 try {
-                    const { data } = await tmdb.get("movie/popular", { params: { language: 'en-US', page, region } });
+                    const { data } = await tmdb.get("movie/popular", { params: { language: 'en-US', page: 1 } });
 
                     set(produce((state) => {
                         state.movies = data.results;
@@ -35,9 +35,9 @@ const useMovieStore = create(
                     console.log(error);
                 }
             },
-            fetchNowPlayingMovies: async (page, region) => {
+            fetchNowPlayingMovies: async () => {
                 try {
-                    const { data } = await tmdb.get("movie/now_playing", { params: { language: 'en-US', page, region } });
+                    const { data } = await tmdb.get("movie/now_playing", { params: { language: 'en-US', page: 1 } });
 
                     set(produce((state) => {
                         state.movies = data.results;
@@ -47,9 +47,9 @@ const useMovieStore = create(
                     console.log(error);
                 }
             },
-            fetchUpcomingMovies: async (page, region) => {
+            fetchUpcomingMovies: async () => {
                 try {
-                    const { data } = await tmdb.get("movie/upcoming", { params: { language: 'en-US', page, region } });
+                    const { data } = await tmdb.get("movie/upcoming", { params: { language: 'en-US', page: 1 } });
 
                     set(produce((state) => {
                         state.movies = data.results;
@@ -58,54 +58,20 @@ const useMovieStore = create(
                 } catch (error) {
                     console.log(error);
                 }
-            },
-            fectMovieCredit: async (movieId) => {
-                try {
-                    const { data } = await tmdb.get(`movie/${movieId}/credits`, { params: { language: 'en-US' } });
-
-                    set(produce((state) => {
-                        state.movies = data.results;
-                        state.moviesReady = true;
-                    }))
-                } catch (error) {
-                    console.log(error);
-                }
-            },
-            fetchMovieVideo: async (movieId) => {
-                try {
-                    const { data } = await tmdb.get(`movie/${movieId}/videos`, { params: { language: 'en-US' } });
-
-                    set(produce((state) => {
-                        state.movies = data.results;
-                        state.moviesReady = true;
-                    }))
-                } catch (error) {
-                    console.log(error);
-                }
-            },
-            fetchMovieInfo: async (movieId) => {
-                try {
-                    const { data } = await tmdb.get(`movie/${movieId}`, { params: { language: 'en-US' } });
-
-                    set(produce((state) => {
-                        state.movies = data.results;
-                        state.moviesReady = true;
-                    }))
-                } catch (error) {
-                    console.log(error);
-                }
-            },
+            },            
             sortMovies: (type) => {
                 if (type === 'asc') {
                     set(produce((state) => {
-                        const sorted = [...state.movies].sort((a, b) => a.vote_average - b.vote_average);
+                        const sorted = [...state.movies].sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
+                        //console.log('asc: ', sorted)
                         state.movies = sorted;
                     }))
                 }
                 if (type === 'desc') {
                     set(produce((state) => {
-                        const sorted = [...state.movies].sort((a, b) => b.vote_average - a.vote_average);
+                        const sorted = [...state.movies].sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
                         state.movies = sorted;
+                        //console.log('desc: ', sorted)
                     }))
                 }
             }
@@ -122,9 +88,7 @@ export const selectMovies = (state) => state.movies;
 export const selectFetchTrendingMovies = (state) => state.fetchTrendingMovies;
 export const selectFecthPopularMovies = (state) => state.fetchPopularMovies;
 export const selectFetchNowPlayingMovies = (state) => state.fetchNowPlayingMovies;
-export const selectFetchMovieCredit = (state) => state.fectMovieCredit;
-export const selectFetchMovieVideo = (state) => state.fetchMovieVideo;
-export const selectFetchMovieInfo = (state) => state.fetchMovieInfo;
+export const selectFetchUpComingMovie = (state) => state.fetchUpcomingMovies;
 export const selectMoviesReady = (state) => state.moviesReady;
 export const selectSortMovies = (state) => state.sortMovies;
 

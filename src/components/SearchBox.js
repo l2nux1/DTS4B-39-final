@@ -43,8 +43,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const SearchBox = (props) => {
+    console.log(props.search)
     return (
-        <Search>
+        <Search sx={props.search?{ visibility: 'visible' }:{ visibility: 'hidden' }}>
             <SearchIconWrapper>
                 <SearchIcon />
             </SearchIconWrapper>

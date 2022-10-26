@@ -5,7 +5,7 @@ const ListRow = (props) => {
     return (
         <Box sx={{ width: '100%', pt: 5 }}>
             <Typography variant='body1' sx={{ textAlign: 'left', mx: 1, fontWeight: 'bold' }}>
-                <Link href='/list-tile?type=movie&data=upcoming' color="inherit">{props.title}</Link>
+                {props.title}
             </Typography>
             <ImageList
                 rowHeight={460}
