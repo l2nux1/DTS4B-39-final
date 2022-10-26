@@ -1,29 +1,59 @@
-import React from 'react';
-import {Box} from '@mui/material';
+import React, { useEffect } from 'react';
+import { Box } from '@mui/material';
 import { ThemeProvider } from '@mui/material';
 import CssBaseline from "@mui/material/CssBaseline";
 
 import UpcomingList from './UpcomingList';
 import ListRow from './ListRow';
 
-import { GetStaticData } from '../data/StaticData';
+//import { GetStaticData } from '../data/StaticData';
 import theme from '../themes/theme';
 
+import useMovieStore, {
+    selectFetchTrendingMovies,
+    selectFecthPopularMovies,
+    selectFetchNowPlayingMovies,
+    selectFetchUpComingMovie,
+    selectTrendingMovies,
+    selectPopularMovies,
+    selectNowPlayingMovies,
+    selectUpcomingMovies
+} from '../store/movie';
+
 const Home = () => {
+    const fetchTrendingMovies = useMovieStore(selectFetchTrendingMovies)
+    const fecthPopularMovies = useMovieStore(selectFecthPopularMovies)
+    const fetchNowPlayingMovies = useMovieStore(selectFetchNowPlayingMovies)
+    const fetchUpComingMovie = useMovieStore(selectFetchUpComingMovie)
+
+    const trendingMovies = useMovieStore(selectTrendingMovies)
+    const popularMovies = useMovieStore(selectPopularMovies)
+    const nowPlayingMovies = useMovieStore(selectNowPlayingMovies)
+    const upcomingMovies = useMovieStore(selectUpcomingMovies)
+
+    useEffect(() => {
+        fetchTrendingMovies();
+        fecthPopularMovies();
+        fetchNowPlayingMovies();
+        fetchUpComingMovie();
+        // eslint-disable-next-line react-hooks/exhaustive-deps        
+    }, [])
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                mt: 8}}
+                mt: 8
+            }}
             >
-                <UpcomingList items={GetStaticData('Upcoming')} />
-                <ListRow title={"Now Playing"} items={GetStaticData('Now Playing')} />
-                <ListRow title={"Trending"} items={GetStaticData('Trending')} />
-                <ListRow title={"Popular"} items={GetStaticData('Popular')} />
+                <UpcomingList items={upcomingMovies} />
+                <ListRow title={"Trending"} items={trendingMovies} />
+                <ListRow title={"Now Playing"} items={nowPlayingMovies} />
+                <ListRow title={"Popular"} items={popularMovies} />
             </Box>
-        </ThemeProvider>        
+        </ThemeProvider>
     )
 }
 export default Home
