@@ -2,6 +2,7 @@ import { Box, ImageList, Typography, Link } from '@mui/material'
 import PosterItem from '../components/PosterItem';
 
 const ListRow = (props) => {
+    console.log(props.items)
     return (
         <Box sx={{ width: '100%', pt: 5 }}>
             <Typography variant='body1' sx={{ textAlign: 'left', mx: 1, fontWeight: 'bold' }}>

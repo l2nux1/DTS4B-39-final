@@ -6,7 +6,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import UpcomingList from './UpcomingList';
 import ListRow from './ListRow';
 
-//import { GetStaticData } from '../data/StaticData';
 import theme from '../themes/theme';
 
 import useMovieStore, {
