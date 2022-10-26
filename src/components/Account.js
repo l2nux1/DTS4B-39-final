@@ -3,6 +3,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import { auth } from '../config/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import { Navigate } from 'react-router-dom';
 
 const Account = () => {
     const [user] = useAuthState(auth);
@@ -10,6 +12,15 @@ const Account = () => {
     const isMenuOpen = Boolean(anchorEl);
     const handleProfileMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
+    };
+
+    const onLogout = async () => {
+        try {
+            await signOut(auth);
+            Navigate("/login");
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     const handleMenuClose = () => {
@@ -29,7 +40,7 @@ const Account = () => {
             }}
         >
             {/*<MenuItem>Welcome {user.displayName ?? user.email}</MenuItem>*/}
-            <MenuItem onClick={handleMenuClose}>SignOut</MenuItem>
+            <MenuItem onClick={onLogout}>SignOut</MenuItem>
         </Menu>
     );
 

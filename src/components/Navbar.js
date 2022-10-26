@@ -13,7 +13,6 @@ import SearchBox from './SearchBox';
 import Account from './Account';
 import FilterManu from './FilterMenu'
 
-
 const Navbar = () => {
     const navigate = useNavigate();
     const [popular, setPopular] = React.useState(false)
@@ -35,15 +34,15 @@ const Navbar = () => {
     };*/
 
     const buttons = [
-        { title: 'Home', path: '/', onState: () => setHome(true), offState: () => setHome(false), getState: home},
-        { title: 'Upcoming', path: '/upcoming', onState: () => setUpcoming(true), offState: () => setUpcoming(false), getState: upcoming},
-        { title: 'Now Playing', path: '/now-playing', onState: () => setNowPlaying(true), offState: () => setNowPlaying(false), getState: nowPlaying},
-        { title: 'Trending', path: '/trending', onState: () => setTrending(true), offState: () => setTrending(false), getState: trending},
-        { title: 'Popular', path: '/popular', onState: () => setPopular(true), offState: () => setPopular(false), getState: popular}
+        { title: 'Home', path: '/', onState: () => setHome(true), offState: () => setHome(false), getState: home },
+        { title: 'Upcoming', path: '/upcoming', onState: () => setUpcoming(true), offState: () => setUpcoming(false), getState: upcoming },
+        { title: 'Now Playing', path: '/now-playing', onState: () => setNowPlaying(true), offState: () => setNowPlaying(false), getState: nowPlaying },
+        { title: 'Trending', path: '/trending', onState: () => setTrending(true), offState: () => setTrending(false), getState: trending },
+        { title: 'Popular', path: '/popular', onState: () => setPopular(true), offState: () => setPopular(false), getState: popular }
     ]
 
     const gotoPage = (param) => {
-        buttons.forEach((button)=>{
+        buttons.forEach((button) => {
             button.offState()
         })
         navigate(`${param}?sort=desc`)
@@ -51,33 +50,33 @@ const Navbar = () => {
         const obj = buttons.find(o => o.path === param)
         obj.onState()
 
-        if (param === '/'){
+        if (param === '/') {
             setMenu(false)
             setSearch(false)
         }
-        else{
+        else {
             setMenu(true)
             setSearch(true)
         }
     }
 
-    return (        
+    return (
         <Box sx={{ display: 'flex' }}>
             <AppBar>
                 <Toolbar>
-                    <FilterManu menu={menu} path={path}/>
+                    <FilterManu menu={menu} path={path} />
 
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {buttons.map((button, id) => (
-                           <Button key={id} sx={ button.getState ? { color: 'red' } : { color: 'white' }} onClick={() => {
+                            <Button key={id} sx={button.getState ? { color: 'red' } : { color: 'white' }} onClick={() => {
                                 gotoPage(button.path)
                             }}>
                                 {button.title}
-                            </Button> 
-                        ))}                        
+                            </Button>
+                        ))}
                     </Box>
 
-                    <SearchBox text={"Search.."} search={search}/>
+                    <SearchBox text={"Search.."} search={search} />
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <Account />

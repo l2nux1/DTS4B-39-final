@@ -51,8 +51,22 @@ const ForgetPass = () => {
                     alignItems: 'center',
                 }}
             >
-                <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                    <LockOutlinedIcon />
+                <Avatar sx={{
+                    m: 1,
+                    bgcolor: 'black',
+                    height: 100,
+                    width: 100,
+                    mb: 4
+                }}>
+                    <Box
+                        component="img"
+                        sx={{
+                            height: 60,
+                            width: 60,
+                        }}
+                        alt="Logo"
+                        src="logo-movie.jpg"
+                    />
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Forget Password

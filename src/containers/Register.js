@@ -1,4 +1,3 @@
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -14,6 +13,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup'
 
 import { auth } from '../config/firebase';
+import { Alert, Stack } from '@mui/material';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -72,12 +72,29 @@ const Register = () => {
                     alignItems: 'center',
                 }}
             >
-                <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                    <LockOutlinedIcon />
+                <Avatar sx={{
+                    m: 1,
+                    bgcolor: 'black',
+                    height: 100,
+                    width: 100,
+                    mb: 4
+                }}>
+                    <Box
+                        component="img"
+                        sx={{
+                            height: 60,
+                            width: 60,
+                        }}
+                        alt="Logo"
+                        src="logo-movie.jpg"
+                    />
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Sign Up
                 </Typography>
+                <Stack sx={{ width: '100%', mt: 2 }} spacing={2}>
+                    {errorMessage ? <Alert severity='error'>{errorMessage}</Alert> : <></>}
+                </Stack>
                 <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
