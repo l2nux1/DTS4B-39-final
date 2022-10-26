@@ -7,6 +7,7 @@ import { ThemeProvider } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
+import Home from './containers/Home';
 import theme from './themes/theme';
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <Navbar />
-        <Outlet/>
+        <Home />
+        <Outlet />
       </div>
     </ThemeProvider>
   );
