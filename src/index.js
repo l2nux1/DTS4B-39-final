@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Login from './containers/Login';
+import Detail from './containers/Detail';
 import NotFound from './containers/NotFound';
 import Register from './containers/Register';
 import ForgetPass from './containers/ForgetPass';
@@ -30,7 +31,11 @@ root.render(
         <ProtectedRoute loginOnly={false}>
           <ForgetPass />
         </ProtectedRoute>} />
-      <Route path="*" element={<NotFound />} />      
+      <Route path="detail" element={
+        <ProtectedRoute loginOnly={false}>
+          <Detail />
+        </ProtectedRoute>} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
 );

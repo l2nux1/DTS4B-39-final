@@ -10,17 +10,17 @@ const MovieList = (props) => {
                 rowHeight={460}
                 sx={{
                     gridAutoFlow: "column",
-                  }}
+                }}
             >
-                <ImageListItem 
+                <ImageListItem
                     sx={{
                         width: 240,
                         height: 320,
                         mx: 1,
                         textAlign: 'left'
-                    }}>                
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/ps2oKfhY6DL3alynlSqY97gHSsg.jpg" 
+                    }}>
+                    <img
+                        src="https://image.tmdb.org/t/p/original/ps2oKfhY6DL3alynlSqY97gHSsg.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -37,8 +37,8 @@ const MovieList = (props) => {
                         textAlign: 'left'
                     }}
                 >
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/7qop80YfuO0BwJa1uXk1DXUUEwv.jpg" 
+                    <img
+                        src="https://image.tmdb.org/t/p/original/7qop80YfuO0BwJa1uXk1DXUUEwv.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -55,8 +55,8 @@ const MovieList = (props) => {
                         textAlign: 'left'
                     }}
                 >
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/m80kPdrmmtEh9wlLroCp0bwUGH0.jpg" 
+                    <img
+                        src="https://image.tmdb.org/t/p/original/m80kPdrmmtEh9wlLroCp0bwUGH0.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -73,8 +73,8 @@ const MovieList = (props) => {
                         textAlign: 'left'
                     }}
                 >
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/jXwYESgxqkXlYvoTyUTO2hqKK7T.jpg" 
+                    <img
+                        src="https://image.tmdb.org/t/p/original/jXwYESgxqkXlYvoTyUTO2hqKK7T.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -83,15 +83,15 @@ const MovieList = (props) => {
                         position="below"
                     />
                 </ImageListItem>
-                <ImageListItem 
+                <ImageListItem
                     sx={{
                         width: 240,
                         height: 320,
                         mx: 1,
                         textAlign: 'left'
-                    }}>                
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/ps2oKfhY6DL3alynlSqY97gHSsg.jpg" 
+                    }}>
+                    <img
+                        src="https://image.tmdb.org/t/p/original/ps2oKfhY6DL3alynlSqY97gHSsg.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -108,8 +108,8 @@ const MovieList = (props) => {
                         textAlign: 'left'
                     }}
                 >
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/7qop80YfuO0BwJa1uXk1DXUUEwv.jpg" 
+                    <img
+                        src="https://image.tmdb.org/t/p/original/7qop80YfuO0BwJa1uXk1DXUUEwv.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -126,8 +126,8 @@ const MovieList = (props) => {
                         textAlign: 'left'
                     }}
                 >
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/m80kPdrmmtEh9wlLroCp0bwUGH0.jpg" 
+                    <img
+                        src="https://image.tmdb.org/t/p/original/m80kPdrmmtEh9wlLroCp0bwUGH0.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -144,8 +144,8 @@ const MovieList = (props) => {
                         textAlign: 'left'
                     }}
                 >
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/jXwYESgxqkXlYvoTyUTO2hqKK7T.jpg" 
+                    <img
+                        src="https://image.tmdb.org/t/p/original/jXwYESgxqkXlYvoTyUTO2hqKK7T.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -154,15 +154,15 @@ const MovieList = (props) => {
                         position="below"
                     />
                 </ImageListItem>
-                <ImageListItem 
+                <ImageListItem
                     sx={{
                         width: 240,
                         height: 320,
                         mx: 1,
                         textAlign: 'left'
-                    }}>                
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/ps2oKfhY6DL3alynlSqY97gHSsg.jpg" 
+                    }}>
+                    <img
+                        src="https://image.tmdb.org/t/p/original/ps2oKfhY6DL3alynlSqY97gHSsg.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -179,8 +179,8 @@ const MovieList = (props) => {
                         textAlign: 'left'
                     }}
                 >
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/7qop80YfuO0BwJa1uXk1DXUUEwv.jpg" 
+                    <img
+                        src="https://image.tmdb.org/t/p/original/7qop80YfuO0BwJa1uXk1DXUUEwv.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -197,8 +197,8 @@ const MovieList = (props) => {
                         textAlign: 'left'
                     }}
                 >
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/m80kPdrmmtEh9wlLroCp0bwUGH0.jpg" 
+                    <img
+                        src="https://image.tmdb.org/t/p/original/m80kPdrmmtEh9wlLroCp0bwUGH0.jpg"
                         alt=''
                     />
                     <ImageListItemBar
@@ -215,8 +215,8 @@ const MovieList = (props) => {
                         textAlign: 'left'
                     }}
                 >
-                    <img 
-                        src="https://image.tmdb.org/t/p/original/jXwYESgxqkXlYvoTyUTO2hqKK7T.jpg" 
+                    <img
+                        src="https://image.tmdb.org/t/p/original/jXwYESgxqkXlYvoTyUTO2hqKK7T.jpg"
                         alt=''
                     />
                     <ImageListItemBar
