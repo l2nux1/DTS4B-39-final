@@ -21,10 +21,9 @@ const useMovieStore = create(
 
                     set(produce((state) => {
                         state.movies = data.results;
-                        state.trendingMoviesxx = data.results;
+                        state.trendingMovies = data.results;
                         state.moviesReady = true;
-                        state.trendingMoviesReady = true;
-                        //console.log('fetchTrendingMovies: ', state.trendingMovies)
+                        console.log('fetchTrendingMovies: ', state.trendingMovies)
                     }))
                 } catch (error) {
                     console.log(error);
