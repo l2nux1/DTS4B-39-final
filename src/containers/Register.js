@@ -15,7 +15,10 @@ import * as Yup from 'yup'
 import { auth } from '../config/firebase';
 import { Alert, Stack } from '@mui/material';
 
+import useUserStore, { selectSetLoggedUser } from '../store/user';
+
 const Register = () => {
+    const setLoggedUser = useUserStore(selectSetLoggedUser);
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState('')
     const validationSchema = Yup.object().shape({
@@ -37,13 +40,14 @@ const Register = () => {
     });
 
     const onSubmit = async (event) => {
-        event.preventDefault();
+        //event.preventDefault();
         const data = new FormData(event.currentTarget);
         const email = data.get('email');
         const password = data.get('password');
 
         try {
             const { user } = await createUserWithEmailAndPassword(auth, email, password);
+            setLoggedUser(user)
             console.log(user);
             navigate("/");
         } catch (error) {
@@ -56,7 +60,8 @@ const Register = () => {
         const auth = getAuth();
         signInWithPopup(auth, provider)
             .then((result) => {
-                const credential = GoogleAuthProvider.credentialFromResult(result);
+                setLoggedUser(result.user)
+                //const credential = GoogleAuthProvider.credentialFromResult(result);
             }).catch((error) => {
                 setErrorMessage(error.message);
             });

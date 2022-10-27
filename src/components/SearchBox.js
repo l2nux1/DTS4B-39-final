@@ -1,6 +1,10 @@
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import { InputBase } from '@mui/material';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import useMovieStore, { selectFindMovie } from '../store/movie';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -43,7 +47,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const SearchBox = (props) => {
-    //console.log(props.search)
+    const findMovie = useMovieStore(selectFindMovie);
+    const [findText, setFindText] = useState('')
+    const navigate = useNavigate();
+
     return (
         <Search sx={props.search ? { visibility: 'visible' } : { visibility: 'hidden' }}>
             <SearchIconWrapper>
@@ -52,6 +59,15 @@ const SearchBox = (props) => {
             <StyledInputBase
                 placeholder={props.text}
                 inputProps={{ 'aria-label': 'search' }}
+                onChange={(e) => {
+                    setFindText(e.target.value)
+                }}
+                onKeyUp={(e) => {
+                    if (e.key === 'Enter') {
+                        findMovie(findText)
+                        navigate('/find')
+                    }
+                }}
             />
         </Search>
     )

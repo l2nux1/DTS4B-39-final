@@ -1,4 +1,3 @@
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -6,8 +5,8 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup'
@@ -15,7 +14,7 @@ import * as Yup from 'yup'
 import { auth } from '../config/firebase';
 
 const ForgetPass = () => {
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const validationSchema = Yup.object().shape({
         email: Yup.string()
             .required('Email is required')
