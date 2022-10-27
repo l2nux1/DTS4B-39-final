@@ -2,12 +2,12 @@ import * as React from 'react';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import { auth } from '../config/firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
+//import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { Navigate } from 'react-router-dom';
 
 const Account = () => {
-    const [user] = useAuthState(auth);
+    //const [user] = useAuthState(auth);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const isMenuOpen = Boolean(anchorEl);
     const handleProfileMenuOpen = (event) => {

@@ -1,10 +1,9 @@
-import { Menu } from '@mui/icons-material';
 import {
-    IconButton,
     Toolbar,
     Box,
     AppBar,
-    Button
+    Button,
+    Typography
 } from '@mui/material';
 
 import * as React from 'react';
@@ -13,7 +12,10 @@ import SearchBox from './SearchBox';
 import Account from './Account';
 import FilterManu from './FilterMenu'
 
+import useUserStore, { selectUser } from '../store/user';
+
 const Navbar = () => {
+    const user = useUserStore(selectUser)
     const navigate = useNavigate();
     const [popular, setPopular] = React.useState(false)
     const [trending, setTrending] = React.useState(false)
@@ -23,15 +25,6 @@ const Navbar = () => {
     const [menu, setMenu] = React.useState(false)
     const [search, setSearch] = React.useState(false)
     const [path, setPath] = React.useState(false)
-
-    /*const onLogout = async () => {
-        try {
-            await signOut(auth);
-            navigate("/login");
-        } catch (err) {
-            console.log(err);
-        }
-    };*/
 
     const buttons = [
         { title: 'Home', path: '/', onState: () => setHome(true), offState: () => setHome(false), getState: home },
@@ -60,6 +53,8 @@ const Navbar = () => {
         }
     }
 
+    //console.log('user:', user.displayName)
+
     return (
         <Box sx={{ display: 'flex' }}>
             <AppBar>
@@ -78,6 +73,9 @@ const Navbar = () => {
 
                     <SearchBox text={"Search.."} search={search} />
                     <Box sx={{ flexGrow: 1 }} />
+                    <Box>
+                        <Typography variant='body'><b>Welcome</b>, {user.displayName}</Typography>
+                    </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <Account />
                     </Box>

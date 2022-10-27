@@ -15,6 +15,7 @@ const useMovieStore = create(
             popularMovies: initialMovies,
             trendingMovies: initialMovies,
             moviesReady: false,
+            findMovieResults: initialMovies,
             fetchTrendingMovies: async () => {
                 try {
                     const { data } = await tmdb.get("trending/movie/week");
@@ -23,7 +24,7 @@ const useMovieStore = create(
                         state.movies = data.results;
                         state.trendingMovies = data.results;
                         state.moviesReady = true;
-                        console.log('fetchTrendingMovies: ', state.trendingMovies)
+                        //console.log('fetchTrendingMovies: ', state.trendingMovies)
                     }))
                 } catch (error) {
                     console.log(error);
@@ -84,6 +85,14 @@ const useMovieStore = create(
                         //console.log('desc: ', sorted)
                     }))
                 }
+            },
+            findMovie: (findText) => {
+                set(produce((state) => {
+                    //console.log('findText: ', findText)
+                    const findResult = [...state.movies].filter((a) => a.title.includes(findText))
+                    //console.log(findResult)
+                    state.findMovieResults = findResult
+                }))
             }
         }),
         {
@@ -105,5 +114,7 @@ export const selectFetchNowPlayingMovies = (state) => state.fetchNowPlayingMovie
 export const selectFetchUpComingMovie = (state) => state.fetchUpcomingMovies;
 export const selectMoviesReady = (state) => state.moviesReady;
 export const selectSortMovies = (state) => state.sortMovies;
+export const selectFindMovie = (state) => state.findMovie;
+export const selectFindMovieResults = (state) => state.findMovieResults;
 
 export default useMovieStore;

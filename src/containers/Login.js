@@ -16,7 +16,10 @@ import * as Yup from 'yup';
 import { Alert } from '@mui/material';
 import { Stack } from '@mui/system';
 
+import useUserStore, { selectSetLoggedUser } from '../store/user';
+
 const Login = () => {
+    const setLoggedUser = useUserStore(selectSetLoggedUser);
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = React.useState('');
     const validationSchema = Yup.object().shape({
@@ -41,7 +44,8 @@ const Login = () => {
         const password = data.get('password');
 
         try {
-            await signInWithEmailAndPassword(auth, email, password);
+            const { user } = await signInWithEmailAndPassword(auth, email, password);
+            setLoggedUser(user)
             navigate("/");
         } catch (error) {
             setErrorMessage(error.message);
@@ -52,11 +56,13 @@ const Login = () => {
     const loginWithGoogle = () => {
         const provider = new GoogleAuthProvider();
         const auth = getAuth();
+
         signInWithPopup(auth, provider)
             .then((result) => {
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                const user = result.user;
+                setLoggedUser(result.user)
+                //const credential = GoogleAuthProvider.credentialFromResult(result);
+                //const token = credential.accessToken;
+                //const user = result.user;
             }).catch((error) => {
                 setErrorMessage(error.message);
             });

@@ -13,7 +13,7 @@ const FilterMenu = (props) => {
 
     const handleMenuClose = (sort) => {
         setAnchorEl(null);
-        console.log(props.path)
+        //console.log(props.path)
         navigate(`${props.path}?sort=${sort}`)
     };
 
@@ -43,7 +43,7 @@ const FilterMenu = (props) => {
                 color="inherit"
                 aria-controls={menuId}
                 onClick={handleProfileMenuOpen}
-                sx={props.menu?{ visibility: 'visible', mr: 2 }:{ visibility: 'hidden', mr: 2 }}
+                sx={props.menu ? { visibility: 'visible', mr: 2 } : { visibility: 'hidden', mr: 2 }}
             >
                 <MenuIcons />
             </IconButton>

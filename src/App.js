@@ -7,7 +7,6 @@ import { ThemeProvider } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
-import Home from './containers/Home';
 import theme from './themes/theme';
 
 function App() {
