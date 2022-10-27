@@ -5,6 +5,7 @@ import { persist } from 'zustand/middleware';
 import tmdb from '../apis/tmdb';
 
 const initialMovies = [];
+const initialObject = {};
 
 const useMovieStore = create(
     persist(
@@ -16,6 +17,8 @@ const useMovieStore = create(
             trendingMovies: initialMovies,
             moviesReady: false,
             findMovieResults: initialMovies,
+            castDetail: initialMovies,
+            videoDetail: initialObject,
             fetchTrendingMovies: async () => {
                 try {
                     const { data } = await tmdb.get("trending/movie/week");
@@ -24,7 +27,6 @@ const useMovieStore = create(
                         state.movies = data.results;
                         state.trendingMovies = data.results;
                         state.moviesReady = true;
-                        //console.log('fetchTrendingMovies: ', state.trendingMovies)
                     }))
                 } catch (error) {
                     console.log(error);
@@ -35,7 +37,6 @@ const useMovieStore = create(
                     const { data } = await tmdb.get("movie/popular", { params: { language: 'en-US', page: 1 } });
 
                     set(produce((state) => {
-                        //console.log('Fetch Popular moivie: ', data.results)
                         state.movies = data.results;
                         state.popularMovies = data.results;
                         state.moviesReady = true;
@@ -66,6 +67,24 @@ const useMovieStore = create(
                         state.upcomingMovies = data.results;
                         state.moviesReady = true;
                     }))
+                } catch (error) {
+                    console.log(error);
+                }
+            },
+            fetchCastInfo: async (id) => {
+                try {
+                    const { data } = await tmdb.get(`movie/${id}/credits`, { params: { language: 'en-US' } });
+                    //console.log('castInfo:', data.cast);
+                    set({ castDetail: await data.cast })
+                } catch (error) {
+                    console.log(error);
+                }
+            },
+            fetchMovieInfo: async (id) => {
+                try {
+                    const { data } = await tmdb.get(`movie/${id}`, { params: { language: 'en-US' } });
+                    //console.log(data);
+                    set({ videoDetail: await data })
                 } catch (error) {
                     console.log(error);
                 }
@@ -116,5 +135,9 @@ export const selectMoviesReady = (state) => state.moviesReady;
 export const selectSortMovies = (state) => state.sortMovies;
 export const selectFindMovie = (state) => state.findMovie;
 export const selectFindMovieResults = (state) => state.findMovieResults;
+export const selectFetchMovieInfo = (state) => state.fetchMovieInfo;
+export const selectVideoDetail = (state) => state.videoDetail;
+export const selectFetchCastInfo = (state) => state.fetchCastInfo;
+export const selectCastDetail = (state) => state.castDetail;
 
 export default useMovieStore;

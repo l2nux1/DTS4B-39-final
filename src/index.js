@@ -14,6 +14,7 @@ import ListPopularMovie from './containers/ListPopularMovie';
 import ListNowPlayingMovie from './containers/ListNowPlayingMovie';
 import ListUpComingMovie from './containers/ListUpComingMovie';
 import FindMovieResults from './containers/FindMovieResults';
+import DetailPageMovie from './containers/DetailPage';
 
 const router = createBrowserRouter(createRoutesFromElements(
   <>
@@ -24,6 +25,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route path="now-playing" element={<ProtectedRoute loginOnly={true}><ListNowPlayingMovie /></ProtectedRoute>} />
       <Route path="upcoming" element={<ProtectedRoute loginOnly={true}><ListUpComingMovie /></ProtectedRoute>} />
       <Route path="find" element={<ProtectedRoute loginOnly={true}><FindMovieResults /></ProtectedRoute>} />
+      <Route path="detail" element={<ProtectedRoute loginOnly={true}><DetailPageMovie /></ProtectedRoute>} />
     </Route>
     <Route path="login" element={<ProtectedRoute loginOnly={false}><Login /></ProtectedRoute>} />
     <Route path="register" element={<ProtectedRoute loginOnly={false}><Register /></ProtectedRoute>} />
