@@ -40,7 +40,6 @@ const Register = () => {
     });
 
     const onSubmit = async (event) => {
-        //event.preventDefault();
         const data = new FormData(event.currentTarget);
         const email = data.get('email');
         const password = data.get('password');
@@ -61,7 +60,6 @@ const Register = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
                 setLoggedUser(result.user)
-                //const credential = GoogleAuthProvider.credentialFromResult(result);
             }).catch((error) => {
                 setErrorMessage(error.message);
             });
