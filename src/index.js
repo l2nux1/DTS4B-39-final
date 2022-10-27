@@ -4,6 +4,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './index.css';
 import App from './App';
 import Login from './containers/Login';
+import Forget from './containers/Forget';
 import NotFound from './containers/NotFound';
 import Register from './containers/Register';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -24,6 +25,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     </Route>
     <Route path="login" element={<ProtectedRoute loginOnly={false}><Login /></ProtectedRoute>} />
     <Route path="register" element={<ProtectedRoute loginOnly={false}><Register /></ProtectedRoute>} />
+    <Route path="forget" element={<ProtectedRoute loginOnly={false}><Forget /></ProtectedRoute>} />
     <Route path="*" element={<NotFound />} />
   </>
   
