@@ -4,33 +4,74 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './index.css';
 import App from './App';
 import Login from './containers/Login';
-import Forget from './containers/ForgetPass';
+//import Forget from './containers/ForgetPass';
 import NotFound from './containers/NotFound';
 import Register from './containers/Register';
-import ProtectedRoute from './components/ProtectedRoute';
 import Home from './containers/Home';
 import ListTrendingMovie from './containers/ListTrendingMovie';
 import ListPopularMovie from './containers/ListPopularMovie';
 import ListNowPlayingMovie from './containers/ListNowPlayingMovie';
 import ListUpComingMovie from './containers/ListUpComingMovie';
 import FindMovieResults from './containers/FindMovieResults';
+import DetailPageMovie from './containers/DetailPage';
+import PrivateComponent from './components/PrivateComponent';
 
 const router = createBrowserRouter(createRoutesFromElements(
-  <>
-    <Route path="/" element={<ProtectedRoute loginOnly={true}><App /></ProtectedRoute>}>
-      <Route path="/" element={<ProtectedRoute loginOnly={true}><Home /></ProtectedRoute>} />
-      <Route path="popular" element={<ProtectedRoute loginOnly={true}><ListPopularMovie /></ProtectedRoute>} />
-      <Route path="trending" element={<ProtectedRoute loginOnly={true}><ListTrendingMovie /></ProtectedRoute>} />
-      <Route path="now-playing" element={<ProtectedRoute loginOnly={true}><ListNowPlayingMovie /></ProtectedRoute>} />
-      <Route path="upcoming" element={<ProtectedRoute loginOnly={true}><ListUpComingMovie /></ProtectedRoute>} />
-      <Route path="find" element={<ProtectedRoute loginOnly={true}><FindMovieResults /></ProtectedRoute>} />
-    </Route>
-    <Route path="login" element={<ProtectedRoute loginOnly={false}><Login /></ProtectedRoute>} />
-    <Route path="register" element={<ProtectedRoute loginOnly={false}><Register /></ProtectedRoute>} />
-    <Route path="forget" element={<ProtectedRoute loginOnly={false}><Forget /></ProtectedRoute>} />
-    <Route path="*" element={<NotFound />} />
-  </>
+  <Route path='/' element={<App />}>
+    <Route path="/" element={
+      <PrivateComponent loginOnly={false}>
+        <Home />
+      </PrivateComponent>
+    } />
 
+    <Route path="popular" element={
+      <PrivateComponent loginOnly={false}>
+        <ListPopularMovie />
+      </PrivateComponent>
+    } />
+
+    <Route path="trending" element={
+      <PrivateComponent loginOnly={false}>
+        <ListTrendingMovie />
+      </PrivateComponent>
+    } />
+
+    <Route path="now-playing" element={
+      <PrivateComponent loginOnly={false}>
+        <ListNowPlayingMovie />
+      </PrivateComponent>
+    } />
+
+    <Route path="upcoming" element={
+      <PrivateComponent loginOnly={false}>
+        <ListUpComingMovie />
+      </PrivateComponent>
+    } />
+
+    <Route path="find" element={
+      <PrivateComponent loginOnly={false}>
+        <FindMovieResults />
+      </PrivateComponent>
+    } />
+
+    <Route path="detail" element={
+      <PrivateComponent loginOnly={true}>
+        <DetailPageMovie />
+      </PrivateComponent>
+    } />
+
+    <Route path="login" element={
+      <PrivateComponent loginOnly={false}>
+        <Login />
+      </PrivateComponent>
+    } />
+    <Route path="register" element={
+      <PrivateComponent loginOnly={false}>
+        <Register />
+      </PrivateComponent>
+    } />
+    <Route path="*" element={<NotFound />} />
+  </Route>
 ))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
