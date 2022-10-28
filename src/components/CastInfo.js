@@ -18,7 +18,7 @@ const CastInfo = (props) => {
     }, [])
 
     return (
-        <Box sx={{ mx: 3, mb: 4 }}>
+        <Box sx={{ mb: 4 }}>
             <Typography variant='h5' sx={{ fontWeight: 'bold' }}>Credits</Typography>
             <ImageList
                 rowHeight={260}

@@ -19,7 +19,7 @@ const MovieInfo = (props) => {
     }, [])
 
     return (
-        <Box sx={{ display: 'flex ', mt: 8, mx: 3, mb: 4 }}>
+        <Box sx={{ display: 'flex ', mb: 4 }}>
             <img
                 src={`${url}${videoDetail.poster_path}`}
                 alt=''

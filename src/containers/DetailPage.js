@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material';
+import { ThemeProvider, Box } from '@mui/material';
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from '../themes/theme';
 import { useSearchParams } from "react-router-dom";
@@ -12,8 +12,10 @@ const DetailPageMovie = () => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <MovieInfo id={index} />
-            <CastInfo id={index} />
+            <Box sx={{ mt: 15, mx: 3, textAlign: 'left' }}>
+                <MovieInfo id={index} />
+                <CastInfo id={index} />
+            </Box>
         </ThemeProvider>
     )
 }

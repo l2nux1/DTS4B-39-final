@@ -1,17 +1,14 @@
-import { ImageListItem, ImageListItemBar, Link } from '@mui/material'
-import { useNavigate } from 'react-router-dom';
+import { ImageListItem, ImageListItemBar } from '@mui/material'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../config/firebase';
 
 const PosterItem = (props) => {
+    const [user] = useAuthState(auth);
     const url = `https://image.tmdb.org/t/p/original${props.item.poster_path}`
     const link = `/detail?vid=${props.item.id}`
-    const navigate = useNavigate();
-
-    function clickHandle() {
-        navigate(link)
-    }
 
     return (
-        <a href={link}>
+        <a href={(user != null) ? link : '/login'}>
             <ImageListItem
                 sx={{
                     width: 240,
@@ -19,7 +16,6 @@ const PosterItem = (props) => {
                     mx: 1,
                     textAlign: 'left'
                 }}>
-
                 <img
                     src={url}
                     alt=''

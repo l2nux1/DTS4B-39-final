@@ -108,7 +108,7 @@ const useMovieStore = create(
             findMovie: (findText) => {
                 set(produce((state) => {
                     //console.log('findText: ', findText)
-                    const findResult = [...state.movies].filter((a) => a.title.includes(findText))
+                    const findResult = [...state.movies].filter((a) => a.title.toUpperCase().includes(findText.toUpperCase()))
                     //console.log(findResult)
                     state.findMovieResults = findResult
                 }))

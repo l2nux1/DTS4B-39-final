@@ -10,12 +10,14 @@ import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearchBox from './SearchBox';
 import Account from './Account';
-import FilterManu from './FilterMenu'
-
-import useUserStore, { selectUser } from '../store/user';
+import FilterManu from './FilterMenu';
+import { auth } from '../config/firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Navbar = () => {
-    const user = useUserStore(selectUser)
+
+    const [user] = useAuthState(auth);
+
     const navigate = useNavigate();
     const [popular, setPopular] = React.useState(false)
     const [trending, setTrending] = React.useState(false)
@@ -53,8 +55,6 @@ const Navbar = () => {
         }
     }
 
-    //console.log('user:', user.displayName)
-
     return (
         <Box sx={{ display: 'flex' }}>
             <AppBar>
@@ -74,7 +74,7 @@ const Navbar = () => {
                     <SearchBox text={"Search.."} search={search} />
                     <Box sx={{ flexGrow: 1 }} />
                     <Box>
-                        <Typography variant='body'><b>Welcome</b>, {user.displayName}</Typography>
+                        <Typography variant='body'><b>Welcome</b>, {(user != null) ? user.email : 'Guest'}</Typography>
                     </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <Account />
